@@ -6,10 +6,11 @@ class AppText extends StatelessWidget {
     required this.title,
     required this.color,
     this.fontSize = 14,
-    this.fontWeight = FontWeight.w400,
+    this.fontWeight = FontWeight.w400,this.maxLines
   });
 
   final String title;
+  final int? maxLines;
   final Color color;
   final double fontSize;
   final FontWeight fontWeight;
@@ -18,8 +19,13 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style:
-          TextStyle(color: color, fontSize: fontSize, fontWeight: fontWeight),
+      maxLines: maxLines,
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        
+      ),
     );
   }
 }
